@@ -105,9 +105,16 @@
         /* medium */
         // TODO: REMOVE the lastchild's margin-bottom in 2.x version
         margin-bottom: $form-item-m-margin-b;
-        #{$form-prefix}-item-label, #{$form-prefix}-text-align, p {
+        #{$form-prefix}-text-align, p {
             line-height: $form-element-medium-height;
         }
+        &.#{$css-prefix}left #{$form-prefix}-item-label>label {
+            display: inline-flex;
+            align-items: center;
+            height: $form-element-medium-height;
+            line-height: normal;
+        }
+
         #{$form-prefix}-text-align, p {
             margin: 0;
         }
@@ -121,8 +128,15 @@
 
         &.#{$css-prefix}large {
             margin-bottom: $form-item-l-margin-b;
-            #{$form-prefix}-item-label, #{$form-prefix}-text-align, p {
+            #{$form-prefix}-text-align, p {
                 line-height: $form-element-large-height;
+            }
+
+            &.#{$css-prefix}left #{$form-prefix}-item-label {
+                line-height: 0;
+                >label {
+                    height: $form-element-large-height;
+                }
             }
 
             @include form-enhance(calc(#{$form-element-large-height} - 1px));
@@ -139,8 +153,11 @@
         &.#{$css-prefix}small {
             margin-bottom: $form-item-s-margin-b;
 
-            #{$form-prefix}-item-label, #{$form-prefix}-text-align, p {
+            #{$form-prefix}-text-align, p {
                 line-height: $form-element-small-height;
+            }
+            &.#{$css-prefix}left #{$form-prefix}-item-label>label {
+                height: $form-element-small-height;
             }
 
             @include form-enhance($form-element-small-height);

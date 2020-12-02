@@ -201,6 +201,7 @@ export interface ItemProps extends React.HTMLAttributes<HTMLElement>, CommonProp
      * 是否修改数据时自动触发校验
      */
     autoValidate?: boolean;
+    colon: boolean;
     labelWidth?: number | string;
     colSpan?: number;
     isPreview?: boolean;
